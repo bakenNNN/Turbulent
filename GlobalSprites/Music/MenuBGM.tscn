@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://qytip85uawn5"]
+
+[ext_resource type="AudioStream" uid="uid://dohy61ldenbh2" path="res://Assets/BGM/01 - Menu.mp3" id="2_7y5qq"]
+
+[node name="MenuBGM" type="AudioStreamPlayer"]
+stream = ExtResource("2_7y5qq")
+volume_db = -15.795

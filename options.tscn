@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce5jbrrctxxhw"]
+
+[ext_resource type="Script" path="res://options.gd" id="1_ad2js"]
+
+[sub_resource type="GDScript" id="GDScript_ycviy"]
+script/source = "extends Button
+"
+
+[node name="Options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 9.0
+offset_right = 3.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ad2js")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -166.0
+offset_right = 127.0
+offset_bottom = -126.0
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Fullscreen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CheckButton" type="OptionButton" parent="HBoxContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -115.0
+offset_right = 1023.0
+offset_bottom = -52.0
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Resolution: "
+
+[node name="ResolutionButton" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -64.0
+offset_right = 48.0
+offset_bottom = -33.0
+grow_vertical = 0
+text = "Back"
+script = SubResource("GDScript_ycviy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -23.0
+offset_right = 139.0
+offset_bottom = 23.0
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Scale: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+min_value = 1.0
+max_value = 3.0
+value = 1.0
+rounded = true
+
+[connection signal="item_selected" from="HBoxContainer2/CheckButton" to="." method="_on_check_button_item_selected"]
+[connection signal="toggled" from="HBoxContainer2/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="item_selected" from="HBoxContainer/ResolutionButton" to="." method="_on_resolution_button_item_selected"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="VBoxContainer/Slider" to="." method="_on_slider_value_changed"]

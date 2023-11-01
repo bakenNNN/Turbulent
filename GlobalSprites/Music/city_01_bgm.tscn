@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjrsl0rd10mvb"]
+
+[ext_resource type="AudioStream" uid="uid://2fmf2l2klwcc" path="res://Assets/BGM/02 - City_01.mp3" id="1_44cxs"]
+
+[node name="City01" type="AudioStreamPlayer"]
+stream = ExtResource("1_44cxs")
+volume_db = -8.434
